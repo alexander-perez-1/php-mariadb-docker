@@ -5,7 +5,7 @@ services:
     ports:
       - "4600:80"
     volumes:
-      - /home/development/projects/php-learn/www:/var/www/html
+      - /home/development/php-docker/www:/var/www/html
     container_name: php-image
     depends_on:
       - db
