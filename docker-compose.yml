@@ -5,7 +5,7 @@ services:
     ports:
       - "4600:80"
     volumes:
-      - /home/development/php-docker/www:/var/www/html
+      - /home/development/php-udemy/www:/var/www/html
     container_name: php-image
     depends_on:
       - db
@@ -19,7 +19,7 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
     volumes:
-      - mariadb_data:/var/lib/mysql
+      - ./mariadb-data:/var/lib/mysql
     ports:
       - "3306:3306"
     container_name: mariadb-container
@@ -34,6 +34,3 @@ services:
       PMA_PASSWORD: ${MYSQL_PASSWORD}
     depends_on:
       - db
-  
-volumes:
-  mariadb_data:
